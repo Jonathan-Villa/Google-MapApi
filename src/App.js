@@ -1,26 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './App.css'
+import { containerStyle, center } from './style/style'
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+
+const apiKey = 'AIzaSyCdnUr2jm0d1m07Awac2ZgHH66ekKT21oQ'
 
 function App() {
+
+  const [marker, setMarker] = useState([]);
+
+  const markIcon =(e)=>{
+
+    setMarker((currentState)=>([
+      ...currentState,
+      {
+        lat_c : e.latLng.lat(),
+        lng_c : e.latLng.lng(),
+        time : +1
+      }
+    ]))
+
+
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <LoadScript
+      googleMapsApiKey={apiKey}
+    >
+
+      <div className='map-container'>
+        <GoogleMap
+          mapContainerStyle={containerStyle}
+          center={center}
+          zoom={10}
+          onClick={markIcon}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          {marker.map((m,index) => (
+            <Marker
+              key={index}
+              position={{ lat: m.lat_c, lng: m.lng_c}}
+            />
+          ))}
+        </GoogleMap>
+
+      </div>
+
+    </LoadScript>
+  )
 }
 
 export default App;
