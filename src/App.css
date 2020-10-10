@@ -3,11 +3,48 @@
     padding: 0;
 }
 
+body{
+    background: #264653;
+}
 
+.main-header{
+    text-align: center;
+}
+
+.sub-header{
+    text-align: center;
+}
+
+/* map container */
 .map-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+
+#google-map{
+    border-radius: 10px;
+}
+
+#google-map:hover{
+    
+    transform: translateY(-15px);
+    box-shadow: 10px 12px 5px 6px rgba(0, 0, 0, 0.35);
+}
+
+/* input container */
+.input-container{
+    position: relative;
+    
+    width: 40%;
+    bottom: 20%;
+
+}
+
+.input-map{
+    width: 100%;
+    text-align: center;
+    height: 30px;
 }
