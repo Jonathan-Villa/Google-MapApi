@@ -4,7 +4,7 @@ import { containerStyle } from './style/style'
 import { GoogleMap, LoadScript, Marker,InfoWindow, Autocomplete} from '@react-google-maps/api';
 import {center} from './style/style'
 import Positions from './components/positions'
-const API_KEY = 'AIzaSyCdnUr2jm0d1m07Awac2ZgHH66ekKT21oQ'
+const apiKey = process.env.API_KEY
 
 
 function App() {
@@ -57,7 +57,7 @@ function App() {
 
 
   return (
-    <LoadScript libraries={["places"]} googleMapsApiKey={API_KEY}>
+    <LoadScript libraries={["places"]} googleMapsApiKey={apiKey}>
       <div className='main-header'><h1>Try finding my favorite locations!</h1></div>
       <div className='map-container'>
         <GoogleMap
