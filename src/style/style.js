@@ -1,4 +1,5 @@
 export const containerStyle = {
+
     width: '600px',
     height: '400px',
     margin: 'auto'

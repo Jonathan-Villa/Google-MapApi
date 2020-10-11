@@ -1,13 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Marker } from '@react-google-maps/api'
 
-function Markers(props) {
+function Markers() {
+
     return (
-        <Marker
-            key={props.key}
-            position={props.position}
-        />
+        <div></div>
     )
 }
 
 export default Markers
+
