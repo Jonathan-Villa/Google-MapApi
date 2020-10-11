@@ -7,7 +7,7 @@ import Positions from './components/positions'
 import * as M from '@material-ui/core'
 
 
-const apiKey = process.env.API_KEY
+const apiKey="AIzaSyCdnUr2jm0d1m07Awac2ZgHH66ekKT21oQ"
 const library = ["places"]
 function App() {
 

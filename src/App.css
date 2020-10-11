@@ -40,6 +40,7 @@ body{
 }
 
 #google-map:hover{
+    transition: .3s ease-in-out;
     transform: translateY(-15px);
     box-shadow: 10px 12px 5px 6px rgba(0, 0, 0, 0.35);
 }
